@@ -10,7 +10,7 @@ namespace LearningApplication
 {
     public partial class TeacherMainScreenForm : Form
     {
-        AddQuestionForm addQuestionForm = new AddQuestionForm();
+        AddMaterialForm addQuestionForm = new AddMaterialForm();
 
         internal static TeacherMainScreenForm teacherMainScreenForm = new TeacherMainScreenForm();
         public TeacherMainScreenForm()

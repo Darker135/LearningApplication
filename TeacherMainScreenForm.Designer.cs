@@ -67,7 +67,7 @@
             this.createQuestionButton.Name = "createQuestionButton";
             this.createQuestionButton.Size = new System.Drawing.Size(176, 49);
             this.createQuestionButton.TabIndex = 3;
-            this.createQuestionButton.Text = "Create question";
+            this.createQuestionButton.Text = "Create material";
             this.createQuestionButton.UseVisualStyleBackColor = true;
             this.createQuestionButton.Click += new System.EventHandler(this.createQuestionButton_Click);
             // 
@@ -77,7 +77,7 @@
             this.deleteQuestionButton.Name = "deleteQuestionButton";
             this.deleteQuestionButton.Size = new System.Drawing.Size(176, 49);
             this.deleteQuestionButton.TabIndex = 3;
-            this.deleteQuestionButton.Text = "Delete question";
+            this.deleteQuestionButton.Text = "Delete material";
             this.deleteQuestionButton.UseVisualStyleBackColor = true;
             // 
             // changeQuestionButton
@@ -86,7 +86,7 @@
             this.changeQuestionButton.Name = "changeQuestionButton";
             this.changeQuestionButton.Size = new System.Drawing.Size(176, 49);
             this.changeQuestionButton.TabIndex = 3;
-            this.changeQuestionButton.Text = "Change question";
+            this.changeQuestionButton.Text = "Change material";
             this.changeQuestionButton.UseVisualStyleBackColor = true;
             // 
             // createTestButton

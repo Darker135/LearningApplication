@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 namespace LearningApplication
 {
-    public partial class AddQuestionForm : Form, IAddQuestionController
+    public partial class AddMaterialForm : Form, IAddMaterialController
     {
         
         SqlCommand command;
@@ -20,10 +20,10 @@ namespace LearningApplication
         public ListBox discipline { get { return disciplineListBox; } set { disciplineListBox = value; }  }
         public CheckedListBox groups { get { return groupCheck; } set { groupCheck = value; } }
         public string theme { get { return themeTextBox.Text; } set { themeTextBox.Text = value; }  }
-        public string question { get { return questionTextBox.Text; } set { questionTextBox.Text = value; } }
+        public string material { get { return materialTextBox.Text; } set { materialTextBox.Text = value; } }
         public string answer { get { return answerTextBox.Text; } set { answerTextBox.Text = value; } }
 
-        public AddQuestionForm()
+        public AddMaterialForm()
         {
             InitializeComponent();
         }
@@ -57,23 +57,23 @@ namespace LearningApplication
                 groupErrorProvider.SetError(groupCheck, "Checked groups can not be empty");
             if(themeTextBox.Text == string.Empty)
                 themeErrorProvider.SetError(themeTextBox, "Theme field can not be empty");
-            addQuestionButton.Enabled = true;
+            addMaterialButton.Enabled = true;
         }
 
-        private void AddQuestionForm_Load(object sender, EventArgs e)
+        private void AddMaterialForm_Load(object sender, EventArgs e)
         {
-            addQuestionButton.Enabled = false;
+            addMaterialButton.Enabled = false;
             groupCheck.Items.Clear();
             disciplineListBox.Items.Clear();
             GetDisciplines();
         }
 
-        private void addQuestionButton_Click(object sender, EventArgs e)
+        private void addMaterialButton_Click(object sender, EventArgs e)
         {
             if (themeErrorProvider.GetError(themeTextBox) == "" && groupErrorProvider.GetError(groupCheck) == ""
-                && questionErrorProvider.GetError(questionTextBox) == "" && AnswerErrorProvider.GetError(answerTextBox) == "")
+                && materialErrorProvider.GetError(materialTextBox) == "" && AnswerErrorProvider.GetError(answerTextBox) == "")
             { 
-                teacher.AddQuestion(this);
+                teacher.AddMaterial(this);
                 Close();
             }
             
@@ -95,17 +95,17 @@ namespace LearningApplication
             else themeErrorProvider.SetError(themeTextBox, "");
         }
 
-        private void questionTextBox_TextChanged(object sender, EventArgs e)
+        private void materialTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (questionTextBox.Text == "")
-                questionErrorProvider.SetError(questionTextBox, "Question field can not be empty");
-            else questionErrorProvider.SetError(questionTextBox, "");
+            if (materialTextBox.Text == "")
+                materialErrorProvider.SetError(materialTextBox, "Material field can not be empty");
+            else materialErrorProvider.SetError(materialTextBox, "");
         }
 
         private void answerTextBox_TextChanged(object sender, EventArgs e)
         {
             if (answerTextBox.Text == "")
-                AnswerErrorProvider.SetError(answerTextBox, "Question field can not be empty");
+                AnswerErrorProvider.SetError(answerTextBox, "Material field can not be empty");
             else AnswerErrorProvider.SetError(answerTextBox, "");
         }
 

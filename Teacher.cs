@@ -34,12 +34,12 @@ namespace LearningApplication
             return command;
         }
 
-        public void AddQuestion(AddQuestionForm form)
+        public void AddMaterial(AddMaterialForm form)
         {
             foreach(var group in form.groups.CheckedItems)
             {
                 query = @$"INSERT INTO dbo.Questions VALUES('{form.discipline.SelectedItem}',
-                        '{form.question}', '{form.answer}', '{group}', '{form.theme}')";
+                        '{form.material}', '{form.answer}', '{group}', '{form.theme}')";
                 SqlCommand command = new SqlCommand(query, LoginForm.connection);
                 command.ExecuteScalar();
             }
