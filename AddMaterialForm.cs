@@ -21,7 +21,7 @@ namespace LearningApplication
         public CheckedListBox groups { get { return groupCheck; } set { groupCheck = value; } }
         public string theme { get { return themeTextBox.Text; } set { themeTextBox.Text = value; }  }
         public string material { get { return materialTextBox.Text; } set { materialTextBox.Text = value; } }
-        public string answer { get { return answerTextBox.Text; } set { answerTextBox.Text = value; } }
+        
 
         public AddMaterialForm()
         {
@@ -71,7 +71,7 @@ namespace LearningApplication
         private void addMaterialButton_Click(object sender, EventArgs e)
         {
             if (themeErrorProvider.GetError(themeTextBox) == "" && groupErrorProvider.GetError(groupCheck) == ""
-                && materialErrorProvider.GetError(materialTextBox) == "" && AnswerErrorProvider.GetError(answerTextBox) == "")
+                && materialErrorProvider.GetError(materialTextBox) == "")
             { 
                 teacher.AddMaterial(this);
                 Close();
@@ -102,12 +102,7 @@ namespace LearningApplication
             else materialErrorProvider.SetError(materialTextBox, "");
         }
 
-        private void answerTextBox_TextChanged(object sender, EventArgs e)
-        {
-            if (answerTextBox.Text == "")
-                AnswerErrorProvider.SetError(answerTextBox, "Material field can not be empty");
-            else AnswerErrorProvider.SetError(answerTextBox, "");
-        }
+        
 
         private void groupCheck_SelectedIndexChanged(object sender, EventArgs e)
         {

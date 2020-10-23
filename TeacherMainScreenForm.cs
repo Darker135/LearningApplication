@@ -5,12 +5,14 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace LearningApplication
 {
     public partial class TeacherMainScreenForm : Form
     {
         AddMaterialForm addQuestionForm = new AddMaterialForm();
+        
 
         internal static TeacherMainScreenForm teacherMainScreenForm = new TeacherMainScreenForm();
         public TeacherMainScreenForm()
@@ -21,7 +23,7 @@ namespace LearningApplication
 
         private void TeacherMainScreenForm_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void TeacherMainScreenForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -38,5 +40,7 @@ namespace LearningApplication
         {
             addQuestionForm.ShowDialog();
         }
+
+        
     }
 }

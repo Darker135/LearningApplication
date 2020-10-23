@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.welcomeLabel = new System.Windows.Forms.Label();
-            this.loggedLabel = new System.Windows.Forms.Label();
             this.createQuestionButton = new System.Windows.Forms.Button();
             this.deleteQuestionButton = new System.Windows.Forms.Button();
             this.changeQuestionButton = new System.Windows.Forms.Button();
@@ -43,73 +41,56 @@
             this.answerButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // welcomeLabel
-            // 
-            this.welcomeLabel.AutoSize = true;
-            this.welcomeLabel.Location = new System.Drawing.Point(23, 16);
-            this.welcomeLabel.Name = "welcomeLabel";
-            this.welcomeLabel.Size = new System.Drawing.Size(71, 20);
-            this.welcomeLabel.TabIndex = 0;
-            this.welcomeLabel.Text = "Welcome";
-            // 
-            // loggedLabel
-            // 
-            this.loggedLabel.AutoSize = true;
-            this.loggedLabel.Location = new System.Drawing.Point(21, 52);
-            this.loggedLabel.Name = "loggedLabel";
-            this.loggedLabel.Size = new System.Drawing.Size(103, 20);
-            this.loggedLabel.TabIndex = 1;
-            this.loggedLabel.Text = "You logged as";
-            // 
             // createQuestionButton
             // 
-            this.createQuestionButton.Location = new System.Drawing.Point(23, 110);
+            this.createQuestionButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.createQuestionButton.Location = new System.Drawing.Point(12, 15);
             this.createQuestionButton.Name = "createQuestionButton";
             this.createQuestionButton.Size = new System.Drawing.Size(176, 49);
             this.createQuestionButton.TabIndex = 3;
-            this.createQuestionButton.Text = "Create material";
+            this.createQuestionButton.Text = "Добавить материал";
             this.createQuestionButton.UseVisualStyleBackColor = true;
             this.createQuestionButton.Click += new System.EventHandler(this.createQuestionButton_Click);
             // 
             // deleteQuestionButton
             // 
-            this.deleteQuestionButton.Location = new System.Drawing.Point(23, 220);
+            this.deleteQuestionButton.Location = new System.Drawing.Point(12, 125);
             this.deleteQuestionButton.Name = "deleteQuestionButton";
             this.deleteQuestionButton.Size = new System.Drawing.Size(176, 49);
             this.deleteQuestionButton.TabIndex = 3;
-            this.deleteQuestionButton.Text = "Delete material";
+            this.deleteQuestionButton.Text = "Удалить материал";
             this.deleteQuestionButton.UseVisualStyleBackColor = true;
             // 
             // changeQuestionButton
             // 
-            this.changeQuestionButton.Location = new System.Drawing.Point(23, 165);
+            this.changeQuestionButton.Location = new System.Drawing.Point(12, 70);
             this.changeQuestionButton.Name = "changeQuestionButton";
             this.changeQuestionButton.Size = new System.Drawing.Size(176, 49);
             this.changeQuestionButton.TabIndex = 3;
-            this.changeQuestionButton.Text = "Change material";
+            this.changeQuestionButton.Text = "Редактировать материал";
             this.changeQuestionButton.UseVisualStyleBackColor = true;
             // 
             // createTestButton
             // 
-            this.createTestButton.Location = new System.Drawing.Point(205, 110);
+            this.createTestButton.Location = new System.Drawing.Point(194, 15);
             this.createTestButton.Name = "createTestButton";
             this.createTestButton.Size = new System.Drawing.Size(176, 49);
             this.createTestButton.TabIndex = 3;
-            this.createTestButton.Text = "Create test";
+            this.createTestButton.Text = "Добавить тест";
             this.createTestButton.UseVisualStyleBackColor = true;
             // 
             // changeTestButton
             // 
-            this.changeTestButton.Location = new System.Drawing.Point(205, 165);
+            this.changeTestButton.Location = new System.Drawing.Point(194, 70);
             this.changeTestButton.Name = "changeTestButton";
             this.changeTestButton.Size = new System.Drawing.Size(176, 49);
             this.changeTestButton.TabIndex = 3;
-            this.changeTestButton.Text = "Change test";
+            this.changeTestButton.Text = "Редактировать тест";
             this.changeTestButton.UseVisualStyleBackColor = true;
             // 
             // deleteTestButton
             // 
-            this.deleteTestButton.Location = new System.Drawing.Point(205, 220);
+            this.deleteTestButton.Location = new System.Drawing.Point(194, 125);
             this.deleteTestButton.Name = "deleteTestButton";
             this.deleteTestButton.Size = new System.Drawing.Size(176, 49);
             this.deleteTestButton.TabIndex = 3;
@@ -127,46 +108,47 @@
             // 
             // viewResultButton
             // 
-            this.viewResultButton.Location = new System.Drawing.Point(387, 324);
+            this.viewResultButton.Location = new System.Drawing.Point(377, 229);
             this.viewResultButton.Name = "viewResultButton";
             this.viewResultButton.Size = new System.Drawing.Size(176, 49);
             this.viewResultButton.TabIndex = 3;
-            this.viewResultButton.Text = "View results";
+            this.viewResultButton.Text = "Оценки";
             this.viewResultButton.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(205, 220);
+            this.button5.Location = new System.Drawing.Point(194, 125);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(176, 49);
             this.button5.TabIndex = 3;
-            this.button5.Text = "Delete test";
+            this.button5.Text = "Удалить тест";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(23, 324);
+            this.exitButton.Location = new System.Drawing.Point(12, 229);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(176, 49);
             this.exitButton.TabIndex = 3;
-            this.exitButton.Text = "Exit";
+            this.exitButton.Text = "Выход";
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // answerButton
             // 
-            this.answerButton.Location = new System.Drawing.Point(387, 165);
+            this.answerButton.Location = new System.Drawing.Point(377, 70);
             this.answerButton.Name = "answerButton";
             this.answerButton.Size = new System.Drawing.Size(176, 49);
             this.answerButton.TabIndex = 3;
-            this.answerButton.Text = "Show correct answers";
+            this.answerButton.Text = "Просмотр ответов";
             this.answerButton.UseVisualStyleBackColor = true;
             // 
             // TeacherMainScreenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(590, 385);
+            this.BackColor = System.Drawing.Color.LightSalmon;
+            this.ClientSize = new System.Drawing.Size(570, 303);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.viewResultButton);
             this.Controls.Add(this.button5);
@@ -178,21 +160,16 @@
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.deleteQuestionButton);
             this.Controls.Add(this.createQuestionButton);
-            this.Controls.Add(this.loggedLabel);
-            this.Controls.Add(this.welcomeLabel);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "TeacherMainScreenForm";
             this.Text = "Homescreen";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TeacherMainScreenForm_FormClosing);
             this.Load += new System.EventHandler(this.TeacherMainScreenForm_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label welcomeLabel;
-        private System.Windows.Forms.Label loggedLabel;
         private System.Windows.Forms.Button createQuestionButton;
         private System.Windows.Forms.Button deleteQuestionButton;
         private System.Windows.Forms.Button changeQuestionButton;

@@ -62,7 +62,7 @@
             this.singUpButton.Name = "singUpButton";
             this.singUpButton.Size = new System.Drawing.Size(181, 53);
             this.singUpButton.TabIndex = 0;
-            this.singUpButton.Text = "Sing Up";
+            this.singUpButton.Text = "Регистрация";
             this.singUpButton.UseVisualStyleBackColor = true;
             this.singUpButton.Click += new System.EventHandler(this.singUpButton_Click);
             // 
@@ -71,19 +71,19 @@
             this.registerAs_label.AutoSize = true;
             this.registerAs_label.Location = new System.Drawing.Point(12, 15);
             this.registerAs_label.Name = "registerAs_label";
-            this.registerAs_label.Size = new System.Drawing.Size(100, 20);
+            this.registerAs_label.Size = new System.Drawing.Size(180, 20);
             this.registerAs_label.TabIndex = 1;
-            this.registerAs_label.Text = "To register as:";
+            this.registerAs_label.Text = "Зарегистрироваться как:";
             // 
             // studentRadio
             // 
             this.studentRadio.AutoSize = true;
             this.studentRadio.Location = new System.Drawing.Point(12, 48);
             this.studentRadio.Name = "studentRadio";
-            this.studentRadio.Size = new System.Drawing.Size(81, 24);
+            this.studentRadio.Size = new System.Drawing.Size(83, 24);
             this.studentRadio.TabIndex = 2;
             this.studentRadio.TabStop = true;
-            this.studentRadio.Text = "Student";
+            this.studentRadio.Text = "Студент";
             this.studentRadio.UseVisualStyleBackColor = true;
             this.studentRadio.CheckedChanged += new System.EventHandler(this.studentRadio_CheckedChanged);
             // 
@@ -92,66 +92,66 @@
             this.teacherRadio.AutoSize = true;
             this.teacherRadio.Location = new System.Drawing.Point(12, 78);
             this.teacherRadio.Name = "teacherRadio";
-            this.teacherRadio.Size = new System.Drawing.Size(81, 24);
+            this.teacherRadio.Size = new System.Drawing.Size(138, 24);
             this.teacherRadio.TabIndex = 2;
             this.teacherRadio.TabStop = true;
-            this.teacherRadio.Text = "Teacher";
+            this.teacherRadio.Text = "Преподаватель";
             this.teacherRadio.UseVisualStyleBackColor = true;
             this.teacherRadio.CheckedChanged += new System.EventHandler(this.teacherRadio_CheckedChanged);
             // 
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(148, 15);
+            this.nameLabel.Location = new System.Drawing.Point(233, 19);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(49, 20);
+            this.nameLabel.Size = new System.Drawing.Size(42, 20);
             this.nameLabel.TabIndex = 3;
-            this.nameLabel.Text = "Name";
+            this.nameLabel.Text = "Имя:";
             // 
             // loginLabel
             // 
             this.loginLabel.AutoSize = true;
-            this.loginLabel.Location = new System.Drawing.Point(148, 48);
+            this.loginLabel.Location = new System.Drawing.Point(223, 48);
             this.loginLabel.Name = "loginLabel";
-            this.loginLabel.Size = new System.Drawing.Size(46, 20);
+            this.loginLabel.Size = new System.Drawing.Size(55, 20);
             this.loginLabel.TabIndex = 3;
-            this.loginLabel.Text = "Login";
+            this.loginLabel.Text = "Логин:";
             // 
             // passwordLabel
             // 
             this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(148, 81);
+            this.passwordLabel.Location = new System.Drawing.Point(213, 81);
             this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(70, 20);
+            this.passwordLabel.Size = new System.Drawing.Size(65, 20);
             this.passwordLabel.TabIndex = 3;
-            this.passwordLabel.Text = "Password";
+            this.passwordLabel.Text = "Пароль:";
             // 
             // departmentLabel
             // 
             this.departmentLabel.AutoSize = true;
-            this.departmentLabel.Location = new System.Drawing.Point(148, 116);
+            this.departmentLabel.Location = new System.Drawing.Point(194, 116);
             this.departmentLabel.Name = "departmentLabel";
-            this.departmentLabel.Size = new System.Drawing.Size(89, 20);
+            this.departmentLabel.Size = new System.Drawing.Size(81, 20);
             this.departmentLabel.TabIndex = 3;
-            this.departmentLabel.Text = "Department";
+            this.departmentLabel.Text = "Факультет:";
             // 
             // specialityLabel
             // 
             this.specialityLabel.AutoSize = true;
-            this.specialityLabel.Location = new System.Drawing.Point(148, 152);
+            this.specialityLabel.Location = new System.Drawing.Point(156, 152);
             this.specialityLabel.Name = "specialityLabel";
-            this.specialityLabel.Size = new System.Drawing.Size(73, 20);
+            this.specialityLabel.Size = new System.Drawing.Size(119, 20);
             this.specialityLabel.TabIndex = 3;
-            this.specialityLabel.Text = "Speciality";
+            this.specialityLabel.Text = "Специальность:";
             // 
             // groupLabel
             // 
             this.groupLabel.AutoSize = true;
-            this.groupLabel.Location = new System.Drawing.Point(148, 186);
+            this.groupLabel.Location = new System.Drawing.Point(214, 186);
             this.groupLabel.Name = "groupLabel";
-            this.groupLabel.Size = new System.Drawing.Size(50, 20);
+            this.groupLabel.Size = new System.Drawing.Size(61, 20);
             this.groupLabel.TabIndex = 3;
-            this.groupLabel.Text = "Group";
+            this.groupLabel.Text = "Группа:";
             // 
             // nameTextBox
             // 
@@ -237,6 +237,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSalmon;
             this.ClientSize = new System.Drawing.Size(533, 318);
             this.Controls.Add(this.teacherNameComboBox);
             this.Controls.Add(this.groupComboBox);
@@ -256,7 +257,7 @@
             this.Controls.Add(this.registerAs_label);
             this.Controls.Add(this.singUpButton);
             this.Name = "RegistrationForm";
-            this.Text = "Registration";
+            this.Text = "Регистрация";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegistrationForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegistrationForm_FormClosed);
             this.Load += new System.EventHandler(this.RegistrationForm_Load);

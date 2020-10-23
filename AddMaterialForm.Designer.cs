@@ -35,7 +35,6 @@
             this.addMaterialButton = new System.Windows.Forms.Button();
             this.themeLabel = new System.Windows.Forms.Label();
             this.themeTextBox = new System.Windows.Forms.TextBox();
-            this.answerTextBox = new System.Windows.Forms.RichTextBox();
             this.groupErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.themeErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.materialErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
@@ -52,14 +51,14 @@
             this.disciplineListBox.ItemHeight = 20;
             this.disciplineListBox.Location = new System.Drawing.Point(13, 13);
             this.disciplineListBox.Name = "disciplineListBox";
-            this.disciplineListBox.Size = new System.Drawing.Size(156, 424);
+            this.disciplineListBox.Size = new System.Drawing.Size(192, 424);
             this.disciplineListBox.TabIndex = 0;
             this.disciplineListBox.SelectedIndexChanged += new System.EventHandler(this.disciplineListBox_SelectedIndexChanged);
             // 
             // groupCheck
             // 
             this.groupCheck.FormattingEnabled = true;
-            this.groupCheck.Location = new System.Drawing.Point(184, 13);
+            this.groupCheck.Location = new System.Drawing.Point(211, 11);
             this.groupCheck.Name = "groupCheck";
             this.groupCheck.Size = new System.Drawing.Size(115, 422);
             this.groupCheck.TabIndex = 1;
@@ -71,7 +70,7 @@
             this.materialTextBox.Location = new System.Drawing.Point(332, 46);
             this.materialTextBox.Name = "materialTextBox";
             this.materialTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.materialTextBox.Size = new System.Drawing.Size(445, 240);
+            this.materialTextBox.Size = new System.Drawing.Size(445, 341);
             this.materialTextBox.TabIndex = 2;
             this.materialTextBox.Text = "Material";
             this.materialTextBox.TextChanged += new System.EventHandler(this.materialTextBox_TextChanged);
@@ -82,18 +81,18 @@
             this.addMaterialButton.Name = "addMaterialButton";
             this.addMaterialButton.Size = new System.Drawing.Size(188, 51);
             this.addMaterialButton.TabIndex = 3;
-            this.addMaterialButton.Text = "Add material";
+            this.addMaterialButton.Text = "Добавить материал";
             this.addMaterialButton.UseVisualStyleBackColor = true;
             this.addMaterialButton.Click += new System.EventHandler(this.addMaterialButton_Click);
             // 
             // themeLabel
             // 
             this.themeLabel.AutoSize = true;
-            this.themeLabel.Location = new System.Drawing.Point(332, 13);
+            this.themeLabel.Location = new System.Drawing.Point(355, 14);
             this.themeLabel.Name = "themeLabel";
-            this.themeLabel.Size = new System.Drawing.Size(57, 20);
+            this.themeLabel.Size = new System.Drawing.Size(47, 20);
             this.themeLabel.TabIndex = 4;
-            this.themeLabel.Text = "Theme:";
+            this.themeLabel.Text = "Тема:";
             // 
             // themeTextBox
             // 
@@ -102,15 +101,6 @@
             this.themeTextBox.Size = new System.Drawing.Size(325, 27);
             this.themeTextBox.TabIndex = 5;
             this.themeTextBox.TextChanged += new System.EventHandler(this.themeTextBox_TextChanged);
-            // 
-            // answerTextBox
-            // 
-            this.answerTextBox.Location = new System.Drawing.Point(330, 298);
-            this.answerTextBox.Name = "answerTextBox";
-            this.answerTextBox.Size = new System.Drawing.Size(446, 80);
-            this.answerTextBox.TabIndex = 6;
-            this.answerTextBox.Text = "Answer";
-            this.answerTextBox.TextChanged += new System.EventHandler(this.answerTextBox_TextChanged);
             // 
             // groupErrorProvider
             // 
@@ -136,8 +126,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSalmon;
             this.ClientSize = new System.Drawing.Size(812, 457);
-            this.Controls.Add(this.answerTextBox);
             this.Controls.Add(this.themeTextBox);
             this.Controls.Add(this.themeLabel);
             this.Controls.Add(this.addMaterialButton);
@@ -145,7 +135,7 @@
             this.Controls.Add(this.groupCheck);
             this.Controls.Add(this.disciplineListBox);
             this.Name = "AddMaterialForm";
-            this.Text = "AddMaterialForm";
+            this.Text = "Добавление материала";
             this.Load += new System.EventHandler(this.AddMaterialForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.themeErrorProvider)).EndInit();
@@ -164,7 +154,6 @@
         private System.Windows.Forms.Button addMaterialButton;
         private System.Windows.Forms.Label themeLabel;
         private System.Windows.Forms.TextBox themeTextBox;
-        private System.Windows.Forms.RichTextBox answerTextBox;
         private System.Windows.Forms.ErrorProvider groupErrorProvider;
         private System.Windows.Forms.ErrorProvider themeErrorProvider;
         private System.Windows.Forms.ErrorProvider materialErrorProvider;

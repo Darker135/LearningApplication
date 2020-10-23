@@ -10,11 +10,13 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Threading;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 namespace LearningApplication
 {
     public partial class LoginForm : Form, ILoginController
     {
+        /*public static LoginForm loginForm = new LoginForm();*/
         public const string connectionString = @"Data Source=DESKTOP-TDD2QC5;Initial Catalog=LearningAppDB;Integrated Security=True";
         internal static SqlConnection connection = new SqlConnection(connectionString);
 
@@ -25,6 +27,8 @@ namespace LearningApplication
 
         public string login { get { return loginTextBox.Text; } set { loginTextBox.Text = value; } }
         public string password { get { return passwordTextBox.Text; } set { passwordTextBox.Text = value; } }
+
+
 
         public LoginForm()
         {
@@ -64,6 +68,8 @@ namespace LearningApplication
         {
             
         }
+
+        
 
         private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
         {

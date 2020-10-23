@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.DirectoryServices.ActiveDirectory;
 
 namespace LearningApplication
 {
     class Teacher
     {
+        
         public string query;
         
         public bool ProveTeacher(LoginForm form)
@@ -25,7 +23,6 @@ namespace LearningApplication
             reader.Close();
             return TeacherLogins.Contains(form.login) && TeacherPasswords.Contains(form.password);
         }
-
         public SqlCommand RegisterAsTeacher(RegistrationForm form)
         {
             query = $@"INSERT INTO dbo.TeacherAccountInfo (Name, Login, Password, IsRegistered)
@@ -38,8 +35,8 @@ namespace LearningApplication
         {
             foreach(var group in form.groups.CheckedItems)
             {
-                query = @$"INSERT INTO dbo.Questions VALUES('{form.discipline.SelectedItem}',
-                        '{form.material}', '{form.answer}', '{group}', '{form.theme}')";
+                query = @$"INSERT INTO dbo.Material VALUES('{form.discipline.SelectedItem}',
+                        '{form.material}', '{group}', '{form.theme}')";
                 SqlCommand command = new SqlCommand(query, LoginForm.connection);
                 command.ExecuteScalar();
             }
