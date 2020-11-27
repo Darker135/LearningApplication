@@ -12,6 +12,8 @@ namespace LearningApplication
     public partial class TeacherMainScreenForm : Form
     {
         AddMaterialForm addQuestionForm = new AddMaterialForm();
+        ChangeMaterialForm changeMaterialForm = new ChangeMaterialForm();
+        DeleteMaterialForm deleteMaterialForm = new DeleteMaterialForm();
         
 
         internal static TeacherMainScreenForm teacherMainScreenForm = new TeacherMainScreenForm();
@@ -41,6 +43,14 @@ namespace LearningApplication
             addQuestionForm.ShowDialog();
         }
 
-        
+        private void changeQuestionButton_Click(object sender, EventArgs e)
+        {
+            changeMaterialForm.ShowDialog();
+        }
+
+        private void deleteQuestionButton_Click(object sender, EventArgs e)
+        {
+            deleteMaterialForm.ShowDialog();
+        }
     }
 }

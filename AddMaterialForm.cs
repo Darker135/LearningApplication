@@ -110,5 +110,10 @@ namespace LearningApplication
                 groupErrorProvider.SetError(groupCheck, "Checked groups can not be empty");
             else groupErrorProvider.SetError(groupCheck, "");
         }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

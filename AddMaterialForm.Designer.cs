@@ -39,6 +39,7 @@
             this.themeErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.materialErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.AnswerErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cancelBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.groupErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.themeErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.materialErrorProvider)).BeginInit();
@@ -58,7 +59,7 @@
             // groupCheck
             // 
             this.groupCheck.FormattingEnabled = true;
-            this.groupCheck.Location = new System.Drawing.Point(211, 11);
+            this.groupCheck.Location = new System.Drawing.Point(211, 15);
             this.groupCheck.Name = "groupCheck";
             this.groupCheck.Size = new System.Drawing.Size(115, 422);
             this.groupCheck.TabIndex = 1;
@@ -77,7 +78,7 @@
             // 
             // addMaterialButton
             // 
-            this.addMaterialButton.Location = new System.Drawing.Point(457, 393);
+            this.addMaterialButton.Location = new System.Drawing.Point(589, 393);
             this.addMaterialButton.Name = "addMaterialButton";
             this.addMaterialButton.Size = new System.Drawing.Size(188, 51);
             this.addMaterialButton.TabIndex = 3;
@@ -122,12 +123,23 @@
             this.AnswerErrorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.AnswerErrorProvider.ContainerControl = this;
             // 
+            // cancelBtn
+            // 
+            this.cancelBtn.Location = new System.Drawing.Point(332, 392);
+            this.cancelBtn.Name = "cancelBtn";
+            this.cancelBtn.Size = new System.Drawing.Size(188, 52);
+            this.cancelBtn.TabIndex = 6;
+            this.cancelBtn.Text = "Отмена";
+            this.cancelBtn.UseVisualStyleBackColor = true;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            // 
             // AddMaterialForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSalmon;
             this.ClientSize = new System.Drawing.Size(812, 457);
+            this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.themeTextBox);
             this.Controls.Add(this.themeLabel);
             this.Controls.Add(this.addMaterialButton);
@@ -158,5 +170,6 @@
         private System.Windows.Forms.ErrorProvider themeErrorProvider;
         private System.Windows.Forms.ErrorProvider materialErrorProvider;
         private System.Windows.Forms.ErrorProvider AnswerErrorProvider;
+        private System.Windows.Forms.Button cancelBtn;
     }
 }

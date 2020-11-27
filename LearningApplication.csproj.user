@@ -4,6 +4,12 @@
     <Compile Update="AddMaterialForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ChangeMaterialForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DeleteMaterialForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>

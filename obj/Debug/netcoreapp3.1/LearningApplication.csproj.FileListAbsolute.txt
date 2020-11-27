@@ -24,3 +24,5 @@ C:\Users\Admin\source\repos\LearningApplication\obj\Debug\netcoreapp3.1\Learning
 C:\Users\Admin\source\repos\LearningApplication\obj\Debug\netcoreapp3.1\LearningApplication.StudentMainScreenForm.resources
 C:\Users\Admin\source\repos\LearningApplication\obj\Debug\netcoreapp3.1\LearningApplication.AddMaterialForm.resources
 C:\Users\Admin\source\repos\LearningApplication\obj\Debug\netcoreapp3.1\LearningApplication.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\LearningApplication\obj\Debug\netcoreapp3.1\LearningApplication.ChangeMaterialForm.resources
+C:\Users\Admin\source\repos\LearningApplication\obj\Debug\netcoreapp3.1\LearningApplication.DeleteMaterialForm.resources

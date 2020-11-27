@@ -11,6 +11,5 @@ namespace LearningApplication
         CheckedListBox groups { get; set; }
         string theme { get; set; }
         string material { get; set; }
-        
     }
 }

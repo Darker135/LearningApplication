@@ -60,6 +60,7 @@
             this.deleteQuestionButton.TabIndex = 3;
             this.deleteQuestionButton.Text = "Удалить материал";
             this.deleteQuestionButton.UseVisualStyleBackColor = true;
+            this.deleteQuestionButton.Click += new System.EventHandler(this.deleteQuestionButton_Click);
             // 
             // changeQuestionButton
             // 
@@ -69,6 +70,7 @@
             this.changeQuestionButton.TabIndex = 3;
             this.changeQuestionButton.Text = "Редактировать материал";
             this.changeQuestionButton.UseVisualStyleBackColor = true;
+            this.changeQuestionButton.Click += new System.EventHandler(this.changeQuestionButton_Click);
             // 
             // createTestButton
             // 
