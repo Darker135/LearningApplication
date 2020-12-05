@@ -11,6 +11,7 @@ namespace LearningApplication
 {
     public partial class StudentMainScreenForm : Form
     {
+        
         public StudentMainScreenForm()
         {
             InitializeComponent();
@@ -26,7 +27,14 @@ namespace LearningApplication
 
         private void StudentMainScreenForm_Load(object sender, EventArgs e)
         {
-            //richTextBox1.Text = "kiribati";
+            
         }
     }
 }
+
+
+//Получить инфо о студенте(группа)(через ключ - логин)
+//Получить специальности для группы
+//Получить темы где тема == специальности && группе
+//массив листов тем где в листах учебный материал, проходится один лист - начинается другой,
+    //между этим нужна проверка пройден ли тест по теме

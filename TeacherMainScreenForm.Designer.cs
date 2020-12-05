@@ -80,6 +80,7 @@
             this.createTestButton.TabIndex = 3;
             this.createTestButton.Text = "Добавить тест";
             this.createTestButton.UseVisualStyleBackColor = true;
+            this.createTestButton.Click += new System.EventHandler(this.createTestButton_Click);
             // 
             // changeTestButton
             // 

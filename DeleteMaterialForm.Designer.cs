@@ -34,11 +34,14 @@
             this.themeComboBox = new System.Windows.Forms.ComboBox();
             this.materialListBox = new System.Windows.Forms.ListBox();
             this.materialTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(13, 386);
+            this.cancelBtn.Location = new System.Drawing.Point(11, 414);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(167, 47);
             this.cancelBtn.TabIndex = 0;
@@ -48,7 +51,7 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(474, 386);
+            this.deleteButton.Location = new System.Drawing.Point(474, 414);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(167, 47);
             this.deleteButton.TabIndex = 0;
@@ -58,19 +61,21 @@
             // 
             // disciplineComboBox
             // 
+            this.disciplineComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.disciplineComboBox.FormattingEnabled = true;
-            this.disciplineComboBox.Location = new System.Drawing.Point(12, 12);
+            this.disciplineComboBox.Location = new System.Drawing.Point(12, 36);
             this.disciplineComboBox.Name = "disciplineComboBox";
-            this.disciplineComboBox.Size = new System.Drawing.Size(192, 28);
+            this.disciplineComboBox.Size = new System.Drawing.Size(210, 28);
             this.disciplineComboBox.TabIndex = 1;
             this.disciplineComboBox.SelectedIndexChanged += new System.EventHandler(this.disciplineComboBox_SelectedIndexChanged);
             // 
             // themeComboBox
             // 
+            this.themeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.themeComboBox.FormattingEnabled = true;
-            this.themeComboBox.Location = new System.Drawing.Point(11, 46);
+            this.themeComboBox.Location = new System.Drawing.Point(11, 90);
             this.themeComboBox.Name = "themeComboBox";
-            this.themeComboBox.Size = new System.Drawing.Size(193, 28);
+            this.themeComboBox.Size = new System.Drawing.Size(211, 28);
             this.themeComboBox.TabIndex = 2;
             this.themeComboBox.SelectedIndexChanged += new System.EventHandler(this.themeComboBox_SelectedIndexChanged);
             // 
@@ -78,25 +83,56 @@
             // 
             this.materialListBox.FormattingEnabled = true;
             this.materialListBox.ItemHeight = 20;
-            this.materialListBox.Location = new System.Drawing.Point(13, 80);
+            this.materialListBox.Location = new System.Drawing.Point(11, 144);
             this.materialListBox.Name = "materialListBox";
-            this.materialListBox.Size = new System.Drawing.Size(191, 284);
+            this.materialListBox.Size = new System.Drawing.Size(211, 264);
             this.materialListBox.TabIndex = 3;
             this.materialListBox.SelectedIndexChanged += new System.EventHandler(this.materialListBox_SelectedIndexChanged);
             // 
             // materialTextBox
             // 
-            this.materialTextBox.Location = new System.Drawing.Point(213, 12);
+            this.materialTextBox.Enabled = false;
+            this.materialTextBox.Location = new System.Drawing.Point(228, 21);
             this.materialTextBox.Multiline = true;
             this.materialTextBox.Name = "materialTextBox";
-            this.materialTextBox.Size = new System.Drawing.Size(428, 352);
+            this.materialTextBox.Size = new System.Drawing.Size(410, 387);
             this.materialTextBox.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(11, 121);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(152, 20);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Выберите материал:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 67);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(117, 20);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Выберите тему:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(209, 20);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Выберите учебный предмет:";
             // 
             // DeleteMaterialForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(655, 450);
+            this.ClientSize = new System.Drawing.Size(655, 473);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.materialTextBox);
             this.Controls.Add(this.materialListBox);
             this.Controls.Add(this.themeComboBox);
@@ -119,5 +155,8 @@
         private System.Windows.Forms.ComboBox themeComboBox;
         private System.Windows.Forms.ListBox materialListBox;
         private System.Windows.Forms.TextBox materialTextBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

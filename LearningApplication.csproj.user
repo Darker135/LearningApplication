@@ -4,6 +4,9 @@
     <Compile Update="AddMaterialForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="AddQuestionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ChangeMaterialForm.cs">
       <SubType>Form</SubType>
     </Compile>

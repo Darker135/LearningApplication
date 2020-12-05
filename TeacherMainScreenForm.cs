@@ -14,6 +14,7 @@ namespace LearningApplication
         AddMaterialForm addQuestionForm = new AddMaterialForm();
         ChangeMaterialForm changeMaterialForm = new ChangeMaterialForm();
         DeleteMaterialForm deleteMaterialForm = new DeleteMaterialForm();
+        AddQuestionForm AddQuestionForm = new AddQuestionForm();
         
 
         internal static TeacherMainScreenForm teacherMainScreenForm = new TeacherMainScreenForm();
@@ -51,6 +52,11 @@ namespace LearningApplication
         private void deleteQuestionButton_Click(object sender, EventArgs e)
         {
             deleteMaterialForm.ShowDialog();
+        }
+
+        private void createTestButton_Click(object sender, EventArgs e)
+        {
+            AddQuestionForm.ShowDialog();
         }
     }
 }

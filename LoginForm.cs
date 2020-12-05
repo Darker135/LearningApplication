@@ -16,9 +16,10 @@ namespace LearningApplication
 {
     public partial class LoginForm : Form, ILoginController
     {
-        /*public static LoginForm loginForm = new LoginForm();*/
+        public static LoginForm loginForm = new LoginForm();
         public const string connectionString = @"Data Source=DESKTOP-TDD2QC5;Initial Catalog=LearningAppDB;Integrated Security=True";
         internal static SqlConnection connection = new SqlConnection(connectionString);
+        
 
         Student student = new Student();
         Teacher teacher = new Teacher();
@@ -44,6 +45,7 @@ namespace LearningApplication
 
         private void loginButton_Click(object sender, EventArgs e)
         {
+            loginForm.login = loginTextBox.Text;
             if (teacher.ProveTeacher(this))
             {
                 TeacherMainScreenForm.teacherMainScreenForm.Show();
@@ -51,7 +53,7 @@ namespace LearningApplication
             }
             else if(student.ProveStudent(this))
             {
-                StudentMainScreenForm.studentMainScreenForm.Show();
+                StudentMainScreenForm.studentMainScreenForm.Show();                
                 Hide();
             }
             //else { }

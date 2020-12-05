@@ -28,58 +28,104 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.materialTextBox = new System.Windows.Forms.RichTextBox();
+            this.disciplineComboBox = new System.Windows.Forms.ComboBox();
+            this.previousLabel = new System.Windows.Forms.LinkLabel();
+            this.nextLabel = new System.Windows.Forms.LinkLabel();
+            this.testButton = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // richTextBox1
+            // materialTextBox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(189, 12);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(544, 296);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
+            this.materialTextBox.Location = new System.Drawing.Point(12, 86);
+            this.materialTextBox.Name = "materialTextBox";
+            this.materialTextBox.Size = new System.Drawing.Size(544, 257);
+            this.materialTextBox.TabIndex = 1;
+            this.materialTextBox.Text = "";
             // 
-            // comboBox1
+            // disciplineComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 12);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(171, 28);
-            this.comboBox1.TabIndex = 2;
+            this.disciplineComboBox.FormattingEnabled = true;
+            this.disciplineComboBox.Location = new System.Drawing.Point(12, 26);
+            this.disciplineComboBox.Name = "disciplineComboBox";
+            this.disciplineComboBox.Size = new System.Drawing.Size(544, 28);
+            this.disciplineComboBox.TabIndex = 2;
             // 
-            // linkLabel1
+            // previousLabel
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(211, 323);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(76, 20);
-            this.linkLabel1.TabIndex = 3;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "linkLabel1";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.previousLabel.AutoSize = true;
+            this.previousLabel.Location = new System.Drawing.Point(251, 367);
+            this.previousLabel.Name = "previousLabel";
+            this.previousLabel.Size = new System.Drawing.Size(51, 20);
+            this.previousLabel.TabIndex = 3;
+            this.previousLabel.TabStop = true;
+            this.previousLabel.Text = "Назад";
+            this.previousLabel.VisitedLinkColor = System.Drawing.Color.Blue;
+            this.previousLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // linkLabel2
+            // nextLabel
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(634, 323);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(76, 20);
-            this.linkLabel2.TabIndex = 4;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "linkLabel2";
+            this.nextLabel.AutoSize = true;
+            this.nextLabel.Location = new System.Drawing.Point(480, 367);
+            this.nextLabel.Name = "nextLabel";
+            this.nextLabel.Size = new System.Drawing.Size(51, 20);
+            this.nextLabel.TabIndex = 4;
+            this.nextLabel.TabStop = true;
+            this.nextLabel.Text = "Далее";
+            this.nextLabel.VisitedLinkColor = System.Drawing.Color.Blue;
+            // 
+            // testButton
+            // 
+            this.testButton.Location = new System.Drawing.Point(308, 354);
+            this.testButton.Name = "testButton";
+            this.testButton.Size = new System.Drawing.Size(166, 46);
+            this.testButton.TabIndex = 5;
+            this.testButton.Text = "Пройти тест";
+            this.testButton.UseVisualStyleBackColor = true;
+            // 
+            // exitButton
+            // 
+            this.exitButton.Location = new System.Drawing.Point(12, 354);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(166, 46);
+            this.exitButton.TabIndex = 6;
+            this.exitButton.Text = "Выход";
+            this.exitButton.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(11, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 20);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Тема:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 61);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 20);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Материал:";
             // 
             // StudentMainScreenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(745, 459);
-            this.Controls.Add(this.linkLabel2);
-            this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.richTextBox1);
+            this.ClientSize = new System.Drawing.Size(576, 417);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.exitButton);
+            this.Controls.Add(this.testButton);
+            this.Controls.Add(this.nextLabel);
+            this.Controls.Add(this.previousLabel);
+            this.Controls.Add(this.disciplineComboBox);
+            this.Controls.Add(this.materialTextBox);
             this.Name = "StudentMainScreenForm";
             this.Text = "StudentMainScreenForm";
             this.Load += new System.EventHandler(this.StudentMainScreenForm_Load);
@@ -90,9 +136,13 @@
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.RichTextBox materialTextBox;
+        private System.Windows.Forms.ComboBox disciplineComboBox;
+        private System.Windows.Forms.LinkLabel previousLabel;
+        private System.Windows.Forms.LinkLabel nextLabel;
+        private System.Windows.Forms.Button testButton;
+        private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

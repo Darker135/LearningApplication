@@ -81,6 +81,7 @@ namespace LearningApplication
             materialTextBox.Text = "";
             GetDisciplines();
             deleteButton.Enabled = false;
+            materialTextBox.ReadOnly = true;
         }
 
         private void disciplineComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -101,7 +102,7 @@ namespace LearningApplication
         {
             materialTextBox.Text = "";
             GetMaterialText();
-            materialTextBox.Enabled = true;
+            materialTextBox.Enabled = true;            
             deleteButton.Enabled = true;
         }
 
