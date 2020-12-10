@@ -90,6 +90,7 @@
             this.changeTestButton.TabIndex = 3;
             this.changeTestButton.Text = "Редактировать тест";
             this.changeTestButton.UseVisualStyleBackColor = true;
+            this.changeTestButton.Click += new System.EventHandler(this.changeTestButton_Click);
             // 
             // deleteTestButton
             // 
@@ -126,6 +127,7 @@
             this.button5.TabIndex = 3;
             this.button5.Text = "Удалить тест";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // exitButton
             // 

@@ -10,7 +10,16 @@
     <Compile Update="ChangeMaterialForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ChangeQuestionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CorrectAnswersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="DeleteMaterialForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DeleteQuestionForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="LoginForm.cs">
@@ -23,6 +32,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="TeacherMainScreenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TestPassingForm.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

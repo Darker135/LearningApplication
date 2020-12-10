@@ -41,7 +41,7 @@ namespace LearningApplication
 
         private void GetMaterial()
         {
-            query = @$"SELECT [MaterialText] FROM dbo.Material 
+            query = @$"SELECT DISTINCT [MaterialText] FROM dbo.Material 
                     WHERE [Theme] = '{themeComboBox.SelectedItem}'
                     AND [MaterialText] <> ' '";
             command = new SqlCommand(query, LoginForm.connection);
@@ -53,7 +53,7 @@ namespace LearningApplication
 
         private void GetMaterialText()
         {
-            query = @$"SELECT [MaterialText] FROM dbo.Material WHERE [MaterialText] = '{materialListBox.SelectedItem}'";
+            query = @$"SELECT DISTINCT [MaterialText] FROM dbo.Material WHERE [MaterialText] = '{materialListBox.SelectedItem}'";
             command = new SqlCommand(query, LoginForm.connection);
             reader = command.ExecuteReader();
             while (reader.Read())
@@ -89,6 +89,8 @@ namespace LearningApplication
 
         private void disciplineComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            materialListBox.Items.Clear();
+            materialTextBox.Text = string.Empty;
             themeComboBox.Items.Clear();
             GetThemes();
             themeComboBox.Enabled = true;
@@ -96,6 +98,7 @@ namespace LearningApplication
 
         private void themeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            materialTextBox.Text = string.Empty;
             materialListBox.Items.Clear();
             GetMaterial();
             materialListBox.Enabled = true;
@@ -103,7 +106,7 @@ namespace LearningApplication
 
         private void materialListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            materialTextBox.Text = "";
+            materialTextBox.Text = string.Empty;            
             GetMaterialText();
             materialTextBox.Enabled = true;
             saveButton.Enabled = true;

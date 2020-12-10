@@ -27,3 +27,6 @@ C:\Users\Admin\source\repos\LearningApplication\obj\Debug\netcoreapp3.1\Learning
 C:\Users\Admin\source\repos\LearningApplication\obj\Debug\netcoreapp3.1\LearningApplication.ChangeMaterialForm.resources
 C:\Users\Admin\source\repos\LearningApplication\obj\Debug\netcoreapp3.1\LearningApplication.DeleteMaterialForm.resources
 C:\Users\Admin\source\repos\LearningApplication\obj\Debug\netcoreapp3.1\LearningApplication.AddQuestionForm.resources
+C:\Users\Admin\source\repos\LearningApplication\obj\Debug\netcoreapp3.1\LearningApplication.TestPassingForm.resources
+C:\Users\Admin\source\repos\LearningApplication\obj\Debug\netcoreapp3.1\LearningApplication.ChangeQuestionForm.resources
+C:\Users\Admin\source\repos\LearningApplication\obj\Debug\netcoreapp3.1\LearningApplication.DeleteQuestionForm.resources

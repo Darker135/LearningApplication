@@ -64,14 +64,19 @@ namespace LearningApplication
 
         private void disciplineComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            groupListBox.Items.Clear();
             themeComboBox.Items.Clear();
+            questionTextBox.Text = string.Empty;
+            answerTextBox.Text = string.Empty;
             GetThemes();
             themeComboBox.Enabled = true;
         }
 
         private void themeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*groupListBox.Items.Clear();*/
+            groupListBox.Items.Clear();
+            questionTextBox.Text = string.Empty;
+            answerTextBox.Text = string.Empty;
             GetGroups();
             groupListBox.Enabled = true;
         }
@@ -92,9 +97,12 @@ namespace LearningApplication
 
         private void addQuestionButton_Click(object sender, EventArgs e)
         {
+            
             if(groupListBox.CheckedItems.Count != 0)
             {
-                AddQuestion();
+                if (!(questionTextBox.Text == string.Empty || answerTextBox.Text == string.Empty))
+                    AddQuestion();
+                else MessageBox.Show("Введите вопрос и ответ", "ОК");
             }                
         }
 

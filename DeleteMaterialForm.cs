@@ -64,10 +64,11 @@ namespace LearningApplication
 
         private void DeleteMaterial()
         {
-            query = @$"UPDATE dbo.Material SET [MaterialText] = ' '
-                        WHERE [MaterialText] = '{materialListBox.SelectedItem}'";
+            query = @$"DELETE FROM dbo.Material WHERE [MaterialText] = '{materialListBox.SelectedItem}'";
             command = new SqlCommand(query, LoginForm.connection);
             command.ExecuteScalar();
+            /*query = "DELETE FROM dbo.Material WHERE [MaterialText] = ' '";
+            command.ExecuteScalar();*/
         }
 
         private void DeleteMaterialForm_Load(object sender, EventArgs e)
@@ -86,6 +87,8 @@ namespace LearningApplication
 
         private void disciplineComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            materialListBox.Items.Clear();
+            materialTextBox.Text = string.Empty;
             themeComboBox.Items.Clear();
             GetThemes();
             themeComboBox.Enabled = true;
@@ -93,6 +96,7 @@ namespace LearningApplication
 
         private void themeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            materialTextBox.Text = string.Empty;
             materialListBox.Items.Clear();
             GetMaterial();
             materialListBox.Enabled = true;
@@ -100,7 +104,7 @@ namespace LearningApplication
 
         private void materialListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            materialTextBox.Text = "";
+            materialTextBox.Text = string.Empty;
             GetMaterialText();
             materialTextBox.Enabled = true;            
             deleteButton.Enabled = true;

@@ -10,11 +10,13 @@ using System.Data.SqlClient;
 namespace LearningApplication
 {
     public partial class TeacherMainScreenForm : Form
-    {
+    {        
         AddMaterialForm addQuestionForm = new AddMaterialForm();
         ChangeMaterialForm changeMaterialForm = new ChangeMaterialForm();
         DeleteMaterialForm deleteMaterialForm = new DeleteMaterialForm();
         AddQuestionForm AddQuestionForm = new AddQuestionForm();
+        ChangeQuestionForm changeQuestionForm = new ChangeQuestionForm();
+        DeleteQuestionForm deleteQuestionForm = new DeleteQuestionForm();
         
 
         internal static TeacherMainScreenForm teacherMainScreenForm = new TeacherMainScreenForm();
@@ -57,6 +59,16 @@ namespace LearningApplication
         private void createTestButton_Click(object sender, EventArgs e)
         {
             AddQuestionForm.ShowDialog();
+        }
+
+        private void changeTestButton_Click(object sender, EventArgs e)
+        {
+            changeQuestionForm.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            deleteQuestionForm.ShowDialog();
         }
     }
 }
