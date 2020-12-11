@@ -5,9 +5,7 @@ namespace LearningApplication
 {
     class Teacher
     {
-        
         public string query;
-        
         public bool ProveTeacher(LoginForm form)
         {
             List<string> TeacherLogins = new List<string>();
@@ -30,7 +28,6 @@ namespace LearningApplication
             SqlCommand command = new SqlCommand(query, LoginForm.connection);
             return command;
         }
-
         public void AddMaterial(AddMaterialForm form)
         {
             foreach(var group in form.groups.CheckedItems)

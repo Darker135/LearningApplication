@@ -1,21 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Data.Common;
-using System.Threading;
 
 namespace LearningApplication
 {
     public partial class RegistrationForm : Form, IRegistrationController
     {
-        
-        Student student = new Student();
-        Teacher teacher = new Teacher();
+        readonly Student student = new Student();
+        readonly Teacher teacher = new Teacher();
         public static RegistrationForm registrationForm = new RegistrationForm();
         List<string> allLoginsList = new List<string>();
         string query;
@@ -24,7 +17,6 @@ namespace LearningApplication
         public RegistrationForm()
         {
             InitializeComponent();
-            
         }
         public string name { get { return loginTextBox.Text; } set { loginTextBox.Text = value; } }
         public string teacherName { get { return teacherNameComboBox.SelectedItem.ToString(); } set { teacherNameComboBox.SelectedItem.ToString(); } }
@@ -33,9 +25,6 @@ namespace LearningApplication
         public string department { get { return departmentComboBox.SelectedItem.ToString(); } set { departmentComboBox.SelectedItem.ToString(); } }
         public string speciality { get { return specialityComboBox.SelectedItem.ToString(); } set { specialityComboBox.SelectedItem.ToString(); } }
         public string group { get { return groupComboBox.SelectedItem.ToString(); } set { groupComboBox.SelectedItem.ToString(); } }
-
-    
-
     private void RegistrationForm_Load(object sender, EventArgs e)
         {
             getAllLoginsList();
@@ -57,10 +46,8 @@ namespace LearningApplication
             groupComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             teacherNameComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             specialityComboBox.Enabled = false;
-            groupComboBox.Enabled = false;
-            
+            groupComboBox.Enabled = false;            
         }
-
         private void singUpButton_Click(object sender, EventArgs e)
         {
             if (studentRadio.Checked)
@@ -87,24 +74,7 @@ namespace LearningApplication
                     Close();
                 }
                 else { }
-            /*if (checkLoginCorrection() && checkPasswordCorrection())
-            {
-                if (studentRadio.Checked && checkNameCorrection())
-                    student.RegisterAsStudent(this).ExecuteScalar();
-                else if (teacherRadio.Checked)
-                    teacher.RegisterAsTeacher(this).ExecuteScalar();
-                loginTextBox.Clear();
-                passwordTextBox.Clear();
-                teacherNameComboBox.Items.Clear();
-                departmentComboBox.Items.Clear();
-                specialityComboBox.Items.Clear();
-                groupComboBox.Items.Clear();
-                Close();
-            }
-            else 
-            { }*/
         }
-
         private void studentRadio_CheckedChanged(object sender, EventArgs e)
         {
             singUpButton.Enabled = true;
@@ -122,11 +92,8 @@ namespace LearningApplication
             passwordTextBox.Clear();
             teacherNameComboBox.SelectedItem = null;
         }
-
         private void teacherRadio_CheckedChanged(object sender, EventArgs e)
         {
-
-            
             singUpButton.Enabled = true;
             nameTextBox.Visible = false;
             teacherNameComboBox.Visible = true;
@@ -145,7 +112,6 @@ namespace LearningApplication
                 passwordTextBox.Enabled = false;
             }
         }
-
         private void getTeacherName()
         {
             string query = @"USE LearningAppDB
@@ -194,7 +160,6 @@ E                           EXCEPT SELECT [Name] FROM dbo.TeacherAccountInfo";
             }
             reader.Close();
         }
-
         private void updateSpeciality()
         {
             specialityComboBox.Items.Clear();
@@ -208,7 +173,6 @@ E                           EXCEPT SELECT [Name] FROM dbo.TeacherAccountInfo";
             }
             reader.Close();
         }
-
         public void updateGroup()
         {
             groupComboBox.Items.Clear();
@@ -222,7 +186,6 @@ E                           EXCEPT SELECT [Name] FROM dbo.TeacherAccountInfo";
             }
             reader.Close();
         }
-
         public void updateRegistrationInfo()
         {
             teacherNameComboBox.Items.Clear();
@@ -235,7 +198,6 @@ E                           EXCEPT SELECT [Name] FROM dbo.TeacherAccountInfo";
             GetSpeciality();
             GetGroup(); 
         }
-
         private void getAllLoginsList()
         {
             
@@ -247,7 +209,6 @@ E                           EXCEPT SELECT [Name] FROM dbo.TeacherAccountInfo";
                 allLoginsList.Add(reader[0].ToString());
             reader.Close();
         }
-
         public bool checkLoginCorrection()
         {
             allLoginsList.Add("");
@@ -268,10 +229,8 @@ E                           EXCEPT SELECT [Name] FROM dbo.TeacherAccountInfo";
                 return true;
             else return false;
         }
-
         public bool checkPasswordCorrection()
         {
-            
             if (passwordTextBox.Text.Length > 40 || passwordTextBox.Text.Length == 0 || passwordTextBox.Text.Contains(" "))
             {
                 if (passwordTextBox.Text.Length > 40)
@@ -286,7 +245,6 @@ E                           EXCEPT SELECT [Name] FROM dbo.TeacherAccountInfo";
                 return true;
             else return false;
         }
-
         public bool checkNameCorrection()
         {
             if (nameTextBox.Text.Length > 40 || nameTextBox.Text.Length == 0)
@@ -301,7 +259,6 @@ E                           EXCEPT SELECT [Name] FROM dbo.TeacherAccountInfo";
                 return true;
             else return false;
         }
-
         public bool checkGroupCorrection()
         {
             if (groupComboBox.SelectedItem == null)
@@ -315,47 +272,30 @@ E                           EXCEPT SELECT [Name] FROM dbo.TeacherAccountInfo";
                 return true;
             }
         }
-
-        private void RegistrationForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            
-        }
-
-        private void RegistrationForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            
-            
-        }
-
         private void loginTextBox_TextChanged(object sender, EventArgs e)
         {
             checkLoginCorrection();
         }
-
         private void passwordTextBox_TextChanged(object sender, EventArgs e)
         {
             checkPasswordCorrection();
         }
-
         private void departmentComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             updateSpeciality();
             specialityComboBox.Enabled = true;
         }
-
         private void specialityComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             updateGroup();
             groupComboBox.Enabled = true;
             groupErrorProvider.SetError(groupComboBox, "Group field can not be empty");
         }
-
         private void teacherNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             loginTextBox.Enabled = true;
             passwordTextBox.Enabled = true;
         }
-
         private void nameTextBox_TextChanged(object sender, EventArgs e)
         {
             if(checkNameCorrection())        
@@ -369,7 +309,6 @@ E                           EXCEPT SELECT [Name] FROM dbo.TeacherAccountInfo";
                 passwordTextBox.Enabled = false;
             }
         }
-
         private void groupComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             checkGroupCorrection();

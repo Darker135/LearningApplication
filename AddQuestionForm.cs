@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
 namespace LearningApplication
 {
-    
     public partial class AddQuestionForm : Form
     {
         string query;
@@ -19,7 +13,6 @@ namespace LearningApplication
         {
             InitializeComponent();
         }
-
         private void AddQuestionForm_Load(object sender, EventArgs e)
         {
             disciplineComboBox.Items.Clear();
@@ -31,8 +24,9 @@ namespace LearningApplication
             questionTextBox.Enabled = false;
             answerTextBox.Enabled = false;
             addQuestionButton.Enabled = false;
+            questionTextBox.Text = string.Empty;
+            answerTextBox.Text = string.Empty;
         }
-
         private void GetDisciplines()
         {
             query = @"SELECT DISTINCT [Discipline] FROM dbo.Disciplines";
@@ -61,7 +55,6 @@ namespace LearningApplication
                 groupListBox.Items.Add(reader[0]);
             reader.Close();
         }
-
         private void disciplineComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             groupListBox.Items.Clear();
@@ -71,7 +64,6 @@ namespace LearningApplication
             GetThemes();
             themeComboBox.Enabled = true;
         }
-
         private void themeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             groupListBox.Items.Clear();
@@ -80,7 +72,6 @@ namespace LearningApplication
             GetGroups();
             groupListBox.Enabled = true;
         }
-
         private void AddQuestion()
         {
             if (questionTextBox.Text.Contains(answerTextBox.Text))
@@ -94,7 +85,6 @@ namespace LearningApplication
                     Close();
                 }
         }
-
         private void addQuestionButton_Click(object sender, EventArgs e)
         {
             
@@ -105,12 +95,10 @@ namespace LearningApplication
                 else MessageBox.Show("Введите вопрос и ответ", "ОК");
             }                
         }
-
         private void cancelButton_Click(object sender, EventArgs e)
         {
             Close();
         }
-
         private void groupListBox_SelectedValueChanged(object sender, EventArgs e)
         {
             if(groupListBox.CheckedItems.Count != 0)
@@ -125,11 +113,6 @@ namespace LearningApplication
                 answerTextBox.Enabled = false;
                 addQuestionButton.Enabled = false;
             }
-        }
-
-        private void answerTextBox_TextChanged(object sender, EventArgs e)
-        {
-            
         }
     }
 }

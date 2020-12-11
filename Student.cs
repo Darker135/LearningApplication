@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Drawing.Drawing2D;
 
 namespace LearningApplication
 {
@@ -16,7 +13,6 @@ namespace LearningApplication
             SqlCommand command = new SqlCommand(query, LoginForm.connection);
             return command;
         }
-
         public bool ProveStudent(LoginForm form)
         {
             List<string> StudentLogins = new List<string>();

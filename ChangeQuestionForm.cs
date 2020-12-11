@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
@@ -18,7 +13,6 @@ namespace LearningApplication
         {
             InitializeComponent();
         }
-
         private void ChangeQuestionForm_Load(object sender, EventArgs e)
         {
             disciplineComboBox.Items.Clear();
@@ -29,7 +23,6 @@ namespace LearningApplication
             GetDisciplines();
             saveButton.Enabled = false;
         }
-
         private void GetDisciplines()
         {
             disciplineComboBox.Items.Clear();
@@ -40,7 +33,6 @@ namespace LearningApplication
                 disciplineComboBox.Items.Add(reader[0]);
             reader.Close();
         }
-
         private void GetThemes()
         {
             themeComboBox.Items.Clear();
@@ -51,7 +43,6 @@ namespace LearningApplication
                 themeComboBox.Items.Add(reader[0]);
             reader.Close();
         }
-
         private void GetQuestions()
         {
             questionListBox.Items.Clear();
@@ -62,7 +53,6 @@ namespace LearningApplication
                 questionListBox.Items.Add(reader[0]);
             reader.Close();
         }
-
         private void GetQuestionsText()
         {
             questionTextBox.Text = string.Empty;
@@ -72,7 +62,6 @@ namespace LearningApplication
             command = new SqlCommand(query, LoginForm.connection);
             answerTextBox.Text = command.ExecuteScalar().ToString();
         }
-
         private void SaveChanges()
         {
             query = $@"UPDATE dbo.QuestionTable SET [QuestionText] = '{questionTextBox.Text}', [QuestionAnswer] = '{answerTextBox.Text}'
@@ -80,14 +69,12 @@ namespace LearningApplication
             command = new SqlCommand(query, LoginForm.connection);
             command.ExecuteScalar();
         }
-
         private void themeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             questionTextBox.Text = string.Empty;
             answerTextBox.Text = string.Empty;
             GetQuestions();
         }
-
         private void disciplineComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             questionTextBox.Text = string.Empty;
@@ -95,18 +82,15 @@ namespace LearningApplication
             questionListBox.Items.Clear();
             GetThemes();
         }
-
         private void questionListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             GetQuestionsText();
             saveButton.Enabled = true;
         }
-
         private void cancelButton_Click(object sender, EventArgs e)
         {
             Close();
         }
-
         private void saveButton_Click(object sender, EventArgs e)
         {
             if (questionTextBox.Text.Contains(answerTextBox.Text))

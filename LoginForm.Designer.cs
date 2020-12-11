@@ -49,7 +49,7 @@
             // loginLabel
             // 
             this.loginLabel.AutoSize = true;
-            this.loginLabel.Location = new System.Drawing.Point(42, 40);
+            this.loginLabel.Location = new System.Drawing.Point(33, 44);
             this.loginLabel.Name = "loginLabel";
             this.loginLabel.Size = new System.Drawing.Size(52, 20);
             this.loginLabel.TabIndex = 1;
@@ -58,7 +58,7 @@
             // passwordLabel
             // 
             this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(42, 104);
+            this.passwordLabel.Location = new System.Drawing.Point(23, 104);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(62, 20);
             this.passwordLabel.TabIndex = 1;
@@ -77,16 +77,16 @@
             // 
             // loginTextBox
             // 
-            this.loginTextBox.Location = new System.Drawing.Point(134, 37);
+            this.loginTextBox.Location = new System.Drawing.Point(91, 37);
             this.loginTextBox.Name = "loginTextBox";
-            this.loginTextBox.Size = new System.Drawing.Size(186, 27);
+            this.loginTextBox.Size = new System.Drawing.Size(229, 27);
             this.loginTextBox.TabIndex = 3;
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(134, 101);
+            this.passwordTextBox.Location = new System.Drawing.Point(91, 101);
             this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(186, 27);
+            this.passwordTextBox.Size = new System.Drawing.Size(229, 27);
             this.passwordTextBox.TabIndex = 3;
             // 
             // LoginForm
@@ -104,7 +104,6 @@
             this.Name = "LoginForm";
             this.Text = "Логин";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginForm_FormClosing);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginForm_FormClosed);
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

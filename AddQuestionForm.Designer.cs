@@ -131,7 +131,6 @@
             this.answerTextBox.Name = "answerTextBox";
             this.answerTextBox.Size = new System.Drawing.Size(398, 68);
             this.answerTextBox.TabIndex = 9;
-            this.answerTextBox.TextChanged += new System.EventHandler(this.answerTextBox_TextChanged);
             // 
             // cancelButton
             // 
@@ -157,6 +156,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSalmon;
             this.ClientSize = new System.Drawing.Size(614, 475);
             this.Controls.Add(this.addQuestionButton);
             this.Controls.Add(this.cancelButton);

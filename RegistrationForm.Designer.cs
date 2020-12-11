@@ -258,8 +258,6 @@
             this.Controls.Add(this.singUpButton);
             this.Name = "RegistrationForm";
             this.Text = "Регистрация";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegistrationForm_FormClosing);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegistrationForm_FormClosed);
             this.Load += new System.EventHandler(this.RegistrationForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.loginErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.passwordErrorProvider)).EndInit();

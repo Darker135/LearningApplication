@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Reflection;
-using System.Text;
 using System.Windows.Forms;
 
 namespace LearningApplication
@@ -24,9 +19,7 @@ namespace LearningApplication
         {
             InitializeComponent();
         }
-        
         public static StudentMainScreenForm studentMainScreenForm = new StudentMainScreenForm();
-
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (counter - 1 >= 0)
@@ -41,8 +34,6 @@ namespace LearningApplication
                     testButton.Enabled = true;
                 else testButton.Enabled = false;
             }
-            //else previousLabel.Visible = false;
-            //if(richTextBox1.SelectedText != string.Empty) urichTextBox1.SelectedText = "aaa";
         }
 
         private void StudentMainScreenForm_Load(object sender, EventArgs e)
@@ -50,19 +41,15 @@ namespace LearningApplication
             previousLabel.Visible = false;
             nextLabel.Visible = false;
             GetDisciplines();
-            //materialTextBox.Text = LoginForm.loginForm.login;
         }
-
         private void StudentMainScreenForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
-
         private void exitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
         private void GetDisciplines()
         {
             disciplineComboBox.Items.Clear();
@@ -76,7 +63,6 @@ namespace LearningApplication
                 disciplineComboBox.Items.Add(reader[0]);
             reader.Close();
         }
-
         private void GetThemes()
         {
             themeComboBox.Items.Clear();
@@ -88,7 +74,6 @@ namespace LearningApplication
                 themeComboBox.Items.Add(reader[0]);
             reader.Close();
         }
-
         private void GetMaterial()
         {
             MaterialList.Clear();
@@ -116,24 +101,15 @@ namespace LearningApplication
         }
         private bool TestCompleted()
         {
-            List<string> Logins = new List<string>();
-            List<string> Themes = new List<string>();
-            query = "SELECT [Login], [Theme] FROM dbo.TestingResults";
+            query = $@"SELECT [Login], [Theme] FROM dbo.TestingResults WHERE [Login] = '{LoginForm.loginForm.login}' 
+                    AND [Theme] = '{themeComboBox.SelectedItem}'";
             command = new SqlCommand(query, LoginForm.connection);
-            reader = command.ExecuteReader();
-            while(reader.Read())
-            {
-                Logins.Add(reader[0].ToString());
-                Themes.Add(reader[1].ToString());
-            }
-            reader.Close();
-            if (Logins.Contains(LoginForm.loginForm.login) && Themes.Contains(themeComboBox.SelectedItem.ToString()))
+            if (command.ExecuteScalar() != null)
             {
                 return true;
             }
             else return false;
         }
-
         private void disciplineComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             GetThemes();
@@ -159,7 +135,6 @@ namespace LearningApplication
             }
             else nextLabel.Visible = false;
         }
-
         private void themeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             nextLabel.Visible = true;
@@ -167,15 +142,12 @@ namespace LearningApplication
             GetMaterial();
             materialTextBox.Text = MaterialList[counter];
             previousLabel.Visible = false;
-            //testButton.Enabled = false;
             if (counter + 1 == MaterialList.Count)
             {
                 testButton.Enabled = true;
-                //nextLabel.Visible = true;
             }
             else
             {
-                //nextLabel.Visible = false;
                 testButton.Enabled = false;
             }
             if (MaterialList.Count == 1)
@@ -183,7 +155,6 @@ namespace LearningApplication
             else 
                 nextLabel.Visible = true;
         }
-
         private void testButton_Click(object sender, EventArgs e)
         {
             if (QuestionsExists())
@@ -199,10 +170,3 @@ namespace LearningApplication
         }
     }
 }
-
-
-//Получить инфо о студенте(группа)(через ключ - логин)
-//Получить специальности для группы
-//Получить темы где тема == специальности && группе
-//массив листов тем где в листах учебный материал, проходится один лист - начинается другой,
-    //между этим нужна проверка пройден ли тест по теме

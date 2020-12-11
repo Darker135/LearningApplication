@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace LearningApplication
@@ -13,7 +9,6 @@ namespace LearningApplication
     {
         static int counter = 0;
         static List<string> Answers = new List<string>();
-        /*static Dictionary<string, string> Questions = new Dictionary<string, string>();*/
         static List<string> QuestionsList = new List<string>();
         string query;
         SqlCommand command;
@@ -22,18 +17,15 @@ namespace LearningApplication
         {
             InitializeComponent();
         }
-
         private void TestPassingForm_Load(object sender, EventArgs e)
         {
             GetTest();
             textBox1.Text = QuestionsList[0];
         }
-
         private void GetTest()
         {
             QuestionsList.Clear();
             Answers.Clear();
-            /*Questions.Clear();*/
             query = $@"SELECT DISTINCT [QuestionText], [QuestionAnswer] FROM dbo.QuestionTable WHERE [Theme] = '{StudentMainScreenForm.theme}'";
             command = new SqlCommand(query, LoginForm.connection);
             reader = command.ExecuteReader();
@@ -41,11 +33,9 @@ namespace LearningApplication
             {
                 QuestionsList.Add(reader[0].ToString());
                 Answers.Add(reader[1].ToString());
-                /*Questions.Add(reader[1].ToString(), reader[0].ToString());*/
             }
             reader.Close();
         }
-
         private bool CheckCorrection()
         {
             query = $@"SELECT [id] FROM dbo.QuestionTable WHERE [QuestionText] = '{textBox1.Text}'";
@@ -59,7 +49,6 @@ namespace LearningApplication
             else
                 return false;
         }
-
         private void NextQuestion()
         {
             if(counter + 1 < QuestionsList.Count)
@@ -73,7 +62,6 @@ namespace LearningApplication
                 Close();
             }
         }
-
         private void answerButton_Click(object sender, EventArgs e)
         {
             if(CheckCorrection())

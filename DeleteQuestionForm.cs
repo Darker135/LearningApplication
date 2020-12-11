@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
@@ -18,7 +13,6 @@ namespace LearningApplication
         {
             InitializeComponent();
         }
-
         private void DeleteQuestionForm_Load(object sender, EventArgs e)
         {
             disciplineComboBox.Items.Clear();
@@ -29,7 +23,6 @@ namespace LearningApplication
             GetDisciplines();
             deleteButton.Enabled = false;
         }
-
         private void GetDisciplines()
         {
             disciplineComboBox.Items.Clear();
@@ -40,7 +33,6 @@ namespace LearningApplication
                 disciplineComboBox.Items.Add(reader[0]);
             reader.Close();
         }
-
         private void GetThemes()
         {
             themeComboBox.Items.Clear();
@@ -51,7 +43,6 @@ namespace LearningApplication
                 themeComboBox.Items.Add(reader[0]);
             reader.Close();
         }
-
         private void GetQuestions()
         {
             questionListBox.Items.Clear();
@@ -62,7 +53,6 @@ namespace LearningApplication
                 questionListBox.Items.Add(reader[0]);
             reader.Close();
         }
-
         private void GetQuestionsText()
         {
             questionTextBox.Text = string.Empty;
@@ -72,14 +62,12 @@ namespace LearningApplication
             command = new SqlCommand(query, LoginForm.connection);
             answerTextBox.Text = command.ExecuteScalar().ToString();
         }
-
         private void DeleteQuestion()
         {
             query = $@"DELETE FROM dbo.QuestionTable WHERE [QuestionText] = '{questionTextBox.Text}'";
             command = new SqlCommand(query, LoginForm.connection);
             command.ExecuteScalar();
         }
-
         private void disciplineComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             questionTextBox.Text = string.Empty;
@@ -87,25 +75,21 @@ namespace LearningApplication
             questionListBox.Items.Clear();
             GetThemes();
         }
-
         private void themeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             questionTextBox.Text = string.Empty;
             answerTextBox.Text = string.Empty;
             GetQuestions();
         }
-
         private void questionListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             GetQuestionsText();
             deleteButton.Enabled = true;
         }
-
         private void cancelButton_Click(object sender, EventArgs e)
         {
             Close();
         }
-
         private void deleteButton_Click(object sender, EventArgs e)
         {
             if (!(questionTextBox.Text == string.Empty || answerTextBox.Text == string.Empty))
@@ -114,7 +98,6 @@ namespace LearningApplication
                 Close();
             }
             else MessageBox.Show("Выберите вопрос", "ОК");
-            
         }
     }
 }

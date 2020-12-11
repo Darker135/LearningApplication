@@ -118,6 +118,7 @@
             this.viewResultButton.TabIndex = 3;
             this.viewResultButton.Text = "Оценки";
             this.viewResultButton.UseVisualStyleBackColor = true;
+            this.viewResultButton.Click += new System.EventHandler(this.viewResultButton_Click);
             // 
             // button5
             // 
@@ -147,6 +148,7 @@
             this.answerButton.TabIndex = 3;
             this.answerButton.Text = "Просмотр ответов";
             this.answerButton.UseVisualStyleBackColor = true;
+            this.answerButton.Click += new System.EventHandler(this.answerButton_Click);
             // 
             // TeacherMainScreenForm
             // 
@@ -169,7 +171,6 @@
             this.Name = "TeacherMainScreenForm";
             this.Text = "Homescreen";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TeacherMainScreenForm_FormClosing);
-            this.Load += new System.EventHandler(this.TeacherMainScreenForm_Load);
             this.ResumeLayout(false);
 
         }

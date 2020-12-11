@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
@@ -14,12 +9,10 @@ namespace LearningApplication
         string query;
         SqlCommand command;
         SqlDataReader reader;
-
         public DeleteMaterialForm()
         {
             InitializeComponent();
         }
-
         private void GetDisciplines()
         {
             query = @"SELECT DISTINCT [Discipline] FROM dbo.Disciplines";
@@ -29,7 +22,6 @@ namespace LearningApplication
                 disciplineComboBox.Items.Add(reader[0]);
             reader.Close();
         }
-
         private void GetThemes()
         {
             query = @$"SELECT DISTINCT [Theme] FROM dbo.Material WHERE [Discipline] = '{disciplineComboBox.SelectedItem}'";
@@ -39,7 +31,6 @@ namespace LearningApplication
                 themeComboBox.Items.Add(reader[0]);
             reader.Close();
         }
-
         private void GetMaterial()
         {
             query = @$"SELECT [MaterialText] FROM dbo.Material 
@@ -51,7 +42,6 @@ namespace LearningApplication
                 materialListBox.Items.Add(reader[0]);
             reader.Close();
         }
-
         private void GetMaterialText()
         {
             query = @$"SELECT [MaterialText] FROM dbo.Material WHERE [MaterialText] = '{materialListBox.SelectedItem}'";
@@ -61,7 +51,6 @@ namespace LearningApplication
                 materialTextBox.Text = reader[0].ToString();
             reader.Close();
         }
-
         private void DeleteMaterial()
         {
             query = @$"DELETE FROM dbo.Material WHERE [MaterialText] = '{materialListBox.SelectedItem}'";
@@ -70,7 +59,6 @@ namespace LearningApplication
             /*query = "DELETE FROM dbo.Material WHERE [MaterialText] = ' '";
             command.ExecuteScalar();*/
         }
-
         private void DeleteMaterialForm_Load(object sender, EventArgs e)
         {
             themeComboBox.Enabled = false;
@@ -84,7 +72,6 @@ namespace LearningApplication
             deleteButton.Enabled = false;
             materialTextBox.ReadOnly = true;
         }
-
         private void disciplineComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             materialListBox.Items.Clear();
@@ -93,7 +80,6 @@ namespace LearningApplication
             GetThemes();
             themeComboBox.Enabled = true;
         }
-
         private void themeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             materialTextBox.Text = string.Empty;
@@ -101,7 +87,6 @@ namespace LearningApplication
             GetMaterial();
             materialListBox.Enabled = true;
         }
-
         private void materialListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             materialTextBox.Text = string.Empty;
@@ -109,12 +94,10 @@ namespace LearningApplication
             materialTextBox.Enabled = true;            
             deleteButton.Enabled = true;
         }
-
         private void cancelBtn_Click(object sender, EventArgs e)
         {
             Close();
         }
-
         private void deleteButton_Click(object sender, EventArgs e)
         {
             DeleteMaterial();

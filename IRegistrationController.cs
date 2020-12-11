@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Forms;
-
-namespace LearningApplication
+﻿namespace LearningApplication
 {
     interface IRegistrationController
     {
@@ -14,6 +9,5 @@ namespace LearningApplication
         string department { get; set; }
         string speciality { get; set; }
         string group { get; set; }
-
     }
 }

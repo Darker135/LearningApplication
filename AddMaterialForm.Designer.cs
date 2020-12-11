@@ -64,7 +64,6 @@
             this.groupCheck.Size = new System.Drawing.Size(115, 422);
             this.groupCheck.TabIndex = 1;
             this.groupCheck.SelectedIndexChanged += new System.EventHandler(this.groupCheck_SelectedIndexChanged);
-            this.groupCheck.SelectedValueChanged += new System.EventHandler(this.groupCheck_SelectedValueChanged);
             // 
             // materialTextBox
             // 
